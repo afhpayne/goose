@@ -11,9 +11,11 @@ Goose will:
 
 There is also exception handling for contacts missing a first name, a last name, or both names (e.g. a company email).
 
+
 Notes:
-    
-Download your contacts from google as a csv file.  You can use outlook or google native format, but google's is prefereable as it has more data.
+=====
+
+Download your contacts from google as a csv file.  You can use outlook or google native format, but google's is preferable as it preserves more data.
 
 Download contacts file to your /user/home/Downloads folder and make sure it's named contacts.csv or google.csv
 
@@ -23,3 +25,42 @@ Your Mutt contacts are expected to use the default: /home/user/.mutt/aliases
 
 One-way sync only (google --> Alpine/Mutt)
 
+
+Exception Handling:
+==================
+
+If your contacts are like mine, not every field is populated.  Mutt and Alpine want a very simple format; basically:
+
+    nick_name   Firstname Lastname  email@email.com
+
+1. Missing Last name:
+    Goose's first guess is this is a company contact (e.g., martha@duckbrainsoftware.com):
+        nick_name = Company Name   --> Duckbrain_software
+        firstname = Firstname      --> Martha
+        lastname  = (Company Name) --> (Duckbrain Software)
+    If no company name is found:
+        nick_name = Firstname      --> Martha
+        firstname = Firstname      --> Martha
+        lastname  = (domain)       --> (duckbrainsoftware)
+
+2. Missing First name:
+    Goose figures this is a friend you know by last name:
+        nick_name = Lastname
+        firstname = _
+        lastname  = Lastname
+
+3. Missing both First and Last names:
+    Goose thinks this is a company (e.g., info@duckbrainsoftware.com)
+        nickname  = Company Name   --> duck_brain_software
+        firstname = localpart      --> info
+        lastname  = (emaildomain)  --> (duckbrainsoftware)
+    If there's no company, no First and no Last name, Goose still won't give up:
+        nickname  = domain         --> duckbrainsoftware
+        firstname = localpart      --> info
+        lastname  = (domain)       --> (duckbrainsoftware)
+
+4. Contacts with multiple emails:
+    Goose appends a incremental number onto the nickname
+
+* underscores are used to concatenate mutliple words into single entries
+* parentheses are used for visual clarity

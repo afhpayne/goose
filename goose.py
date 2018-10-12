@@ -13,7 +13,7 @@ soft_name = "goose.py"
 soft_tag  = "a contact converter for Mutt and Alpine"
 
 # Software version
-soft_vers = "beta 0.12"
+soft_vers = "beta 0.13"
 
 # USER HOME
 user_home = os.environ['HOME']
@@ -82,6 +82,7 @@ global nick_list
 nick_list = []
 
 # Functions
+# This is for exception handling
 def extract_names_func():
     global first_name
     global last_name
@@ -107,9 +108,14 @@ def extract_names_func():
         first_name = "_" 
     # Neither
     elif first_name == '' and last_name == '':
-        nick_name  = email_addr.split("@")[0].replace(".", "") 
-        first_name = email_addr.split("@")[0].replace(".", "")
-        last_name  = ("(" + (email_addr.split("@")[1]).split(".")[0] + ")")
+        if company_name:
+            nick_name = company_name[0:15].lower().replace(" ", "_").replace(".", "")
+            first_name = email_addr.split("@")[0].replace(".", "")
+            last_name  = ("(" + (email_addr.split("@")[1]).split(".")[0] + ")")
+        else:
+            nick_name  = email_addr.split("@")[0].replace(".", "") 
+            first_name = email_addr.split("@")[0].replace(".", "")
+            last_name  = ("(" + (email_addr.split("@")[1]).split(".")[0] + ")")
     # Both names present
     else:
         first_name = first_name.replace(".", "")
@@ -163,7 +169,7 @@ with open(google_export) as contacts_csv:
                                 if email_addr1:
                                     extract_names_func()
                                     nick_list.append(nick_name + "_1")
-                                    print(nick_name + "_1")
+                                    print(nick_name + "_1", '\t', first_name, last_name, '\t', email_addr)
                                     print(nick_name + "_1", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                     print("alias", nick_name + "_1", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 try:
@@ -171,7 +177,7 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         nick_list.append(nick_name + "_2")
-                                        print(nick_name + "_2")
+                                        print(nick_name + "_2", '\t', first_name, last_name, '\t', email_addr)
                                         print(nick_name + "_2", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                         print("alias", nick_name + "_2", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
@@ -181,7 +187,7 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         nick_list.append(nick_name + "_3")
-                                        print(nick_name + "_3")
+                                        print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr)
                                         print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                         print("alias", nick_name + "_3", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
@@ -191,7 +197,7 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         nick_list.append(nick_name + "_4")
-                                        print(nick_name + "_4")
+                                        print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr)
                                         print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                         print("alias", nick_name + "_4", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
@@ -201,15 +207,15 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         if (nick_name + "_2") not in nick_list:
-                                            print(nick_name + "_2")
+                                            print(nick_name + "_2", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_2", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_2", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_2") in nick_list and (nick_name + "_3") not in nick_list:
-                                            print(nick_name + "_3")
+                                            print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_3", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_3") in nick_list and (nick_name + "_4") not in nick_list:
-                                            print(nick_name + "_4")
+                                            print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_4", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
@@ -219,19 +225,19 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         if (nick_name + "_3") not in nick_list:
-                                            print(nick_name + "_3")
+                                            print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_3", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_3", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_3") in nick_list and (nick_name + "_4") not in nick_list:
-                                            print(nick_name + "_4")
+                                            print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_4", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_4") in nick_list and (nick_name + "_5") not in nick_list:
-                                            print(nick_name + "_5")
+                                            print(nick_name + "_5", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_5", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_5", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_5") in nick_list and (nick_name + "_6") not in nick_list:
-                                            print(nick_name + "_6")
+                                            print(nick_name + "_6", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_6", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_6", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
@@ -241,19 +247,19 @@ with open(google_export) as contacts_csv:
                                     if email_addr:
                                         extract_names_func()
                                         if (nick_name + "_4") not in nick_list:
-                                            print(nick_name + "_4")
+                                            print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_4", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_4", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_4") in nick_list and (nick_name + "_5") not in nick_list:
-                                            print(nick_name + "_5")
+                                            print(nick_name + "_5", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_5", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_5", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_5") in nick_list and (nick_name + "_6") not in nick_list:
-                                            print(nick_name + "_6")
+                                            print(nick_name + "_6", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_6", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_6", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                         if (nick_name + "_6") in nick_list and (nick_name + "_7") not in nick_list:
-                                            print(nick_name + "_7")
+                                            print(nick_name + "_7", '\t', first_name, last_name, '\t', email_addr)
                                             print(nick_name + "_7", '\t', first_name, last_name, '\t', email_addr, file=alpine_out)
                                             print("alias", nick_name + "_7", first_name, last_name, "<" + email_addr + ">", file=mutt_out)
                                 except:
