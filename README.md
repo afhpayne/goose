@@ -109,7 +109,7 @@ If you're not used to python scripts, using them is still easy.
     /home/username/bin
     ```
     and add this location to your $PATH file.  Edit your .bashrc file:
-        ```# User defined paths:
-        PATH=$PATH:~/bin
-        ```
+    ```# User defined paths:
+    PATH=$PATH:~/bin
+    ```
     Now, executables you add to this new bin will be executable from any open terminal
