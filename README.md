@@ -67,7 +67,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 
 4. Contacts with multiple emails:
     ```
-    Goose appends a incremental number onto the nickname
+    Goose creates a new entry for each email, appending an number [_1, _2, _3...]
     ```
 
 * underscores are used to concatenate mutliple words into single entries
