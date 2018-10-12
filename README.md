@@ -1,13 +1,5 @@
 Goose is a utility that imports google contacts into Mutt or Alpine email.
 
-[Running Goose](#running)
-
-[Notes](#notes)
-
-[Exception Handling](#exception-handling)
-
-[Beginners Help](#beginners-help)
-
 Goose will:
 
 * format contacts for either Mutt or Alpine (or both at once) 
@@ -18,6 +10,16 @@ Goose will:
 
 
 There is also exception handling for contacts missing a first name, a last name, or both names (e.g. a company email).
+
+CONTENTS:
+
+[Running Goose](#running)
+
+[Notes](#notes)
+
+[Exception Handling](#exception-handling)
+
+[Beginners Help](#beginners-help)
 
 <br><br>
 ## Running:
@@ -88,7 +90,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 ## Beginners' Help
 
 If you're not used to python scripts, using them is still easy.
-* You must run it from your terminal, just like Mutt and Alpine
+* You must goose.py it from your terminal, just like Mutt and Alpine
 
 * Save goose.py in a folder, open that folder and type:
     ```
@@ -106,12 +108,13 @@ If you're not used to python scripts, using them is still easy.
     ```
     Now, you can open any terminal and simply type goose.py to run it.
 
-* Want to get fancy?  Make your own bin anywhere you like - maybe:
+* Another option - make your own bin anywhere you like - maybe:
     ```
     /home/username/bin
     ```
     and add this location to your $PATH file.  Edit your .bashrc file:
-    ```# User defined paths:
+    ```
+    # User defined paths:
     PATH=$PATH:~/bin
     ```
     Now, executables you add to this new bin will be executable from any open terminal
