@@ -1,6 +1,9 @@
 Goose is a utility that imports google contacts into Mutt or Alpine email.
 
 [Running Goose](#running)
+[Notes](#notes)
+[Exception Handling](#exception-handling)
+[Beginners Help](#beginners-help)
 
 Goose will:
 
@@ -18,7 +21,7 @@ There is also exception handling for contacts missing a first name, a last name,
 Download goose.py open your terminal and run it.
 
 
-Notes:
+## Notes:
 -----
 
 Download your contacts from google as a csv file.  You can use outlook or google native format, but google's is preferable as it preserves more data.
@@ -32,7 +35,7 @@ Your Mutt contacts are expected to use the default: /home/user/.mutt/aliases
 One-way sync only (google --> Alpine/Mutt)
 
 
-Exception Handling:
+## Exception Handling:
 ------------------
 
 If your contacts are like mine, not every field is populated.  Mutt and Alpine want a very simple format; basically:
@@ -78,3 +81,5 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 
 * underscores are used to concatenate mutliple words into single entries
 * parentheses are used for visual clarity
+
+## Beginners' Help
