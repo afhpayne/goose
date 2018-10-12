@@ -13,7 +13,7 @@ There is also exception handling for contacts missing a first name, a last name,
 
 
 Notes:
-=====
+-----
 
 Download your contacts from google as a csv file.  You can use outlook or google native format, but google's is preferable as it preserves more data.
 
@@ -27,7 +27,7 @@ One-way sync only (google --> Alpine/Mutt)
 
 
 Exception Handling:
-==================
+------------------
 
 If your contacts are like mine, not every field is populated.  Mutt and Alpine want a very simple format; basically:
 
