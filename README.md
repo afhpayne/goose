@@ -87,7 +87,8 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 
 If you're not used to python scripts, using them is still easy.
 * You must run it from your terminal, just like Mutt and Alpine
-* You save goose.py in a folder, open that folder and type:
+
+* Save goose.py in a folder, open that folder and type:
     ```
     python3 goose.py
     ```
@@ -96,12 +97,14 @@ If you're not used to python scripts, using them is still easy.
     chmod +x goose.py
     ```
 Now, you don't need to type 'python3' to execute it, just type goose.py
+
 * Better yet, take your newly executable script and put it in: 
     ```
     /usr/local/bin
     ```
 Now, you can open any terminal and simply type goose.py to run it.
-    * Want to get fancy?  Make your own bin anywhere you like - maybe:
+
+* Want to get fancy?  Make your own bin anywhere you like - maybe:
     ```
     /home/username/bin
     ```
