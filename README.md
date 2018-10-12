@@ -1,6 +1,6 @@
 Goose is a utility that imports google contacts into Mutt or Alpine email.
 
-[Running Goose](Page#Running) 
+[Running Goose](## Running) 
 
 Goose will:
 
