@@ -21,7 +21,7 @@ There is also exception handling for contacts missing a first name, a last name,
 
 ## Running:
 
-Download goose.py open your terminal and run it.
+Download goose.py open your terminal and execute it with python3 goose.py.
 
 
 ## Notes:
@@ -84,3 +84,21 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 * parentheses are used for visual clarity
 
 ## Beginners' Help
+
+If you're not used to python scripts, using them is still easy.
+    * You must run it from your terminal, just like Mutt and Alpine
+    * You save goose.py in a folder, open that folder and type:
+    ```python3 goose.py```
+    * It's much easier to make it executable.  Go to the folder that contains goose.py and:
+    ```chmod +x goose.py```
+    Now, you don't need to type 'python3' to execute it, just type goose.py
+    * Better yet, take your newly executable script and put it in: 
+    ```/usr/local/bin```
+    Now, you can open any terminal and simply type goose.py to run it.
+    * Want to get fancy?  Make your own bin anywhere you like - maybe:
+    ```/home/username/bin```
+    and add this location to your $PATH file.  Edit your .bashrc file:
+    ```# User defined paths:
+    PATH=$PATH:~/bin
+    ```
+    Now, executables you add to this new bin will be executable from any open terminal
