@@ -11,6 +11,11 @@ Goose will:
 
 There is also exception handling for contacts missing a first name, a last name, or both names (e.g. a company email).
 
+Running:
+-------
+
+Download goose.py open your terminal and run it.
+
 
 Notes:
 -----
