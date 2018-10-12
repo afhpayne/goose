@@ -35,8 +35,6 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 
 1. Missing Last name:
 
-    nickname
-
     Goose's first guess is this is a company contact (e.g., martha@duckbrainsoftware.com):
         nick_name = Company Name   --> Duckbrain_software
         firstname = Firstname      --> Martha
