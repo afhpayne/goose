@@ -34,7 +34,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
     nick_name   Firstname Lastname  email@email.com
 
 1. Missing Last name:
-
+    ```
     Goose's first guess is this is a company contact (e.g., martha@duckbrainsoftware.com):
         nick_name = Company Name   --> Duckbrain_software
         firstname = Firstname      --> Martha
@@ -43,6 +43,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
         nick_name = Firstname      --> Martha
         firstname = Firstname      --> Martha
         lastname  = (domain)       --> (duckbrainsoftware)
+    ```
 
 2. Missing First name:
 
