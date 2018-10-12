@@ -34,6 +34,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
     nick_name   Firstname Lastname  email@email.com
 
 1. Missing Last name:
+
     Goose's first guess is this is a company contact (e.g., martha@duckbrainsoftware.com):
         nick_name = Company Name   --> Duckbrain_software
         firstname = Firstname      --> Martha
@@ -44,12 +45,14 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
         lastname  = (domain)       --> (duckbrainsoftware)
 
 2. Missing First name:
+
     Goose figures this is a friend you know by last name:
         nick_name = Lastname
         firstname = _
         lastname  = Lastname
 
 3. Missing both First and Last names:
+
     Goose thinks this is a company (e.g., info@duckbrainsoftware.com)
         nickname  = Company Name   --> duck_brain_software
         firstname = localpart      --> info
@@ -60,6 +63,7 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
         lastname  = (domain)       --> (duckbrainsoftware)
 
 4. Contacts with multiple emails:
+
     Goose appends a incremental number onto the nickname
 
 * underscores are used to concatenate mutliple words into single entries
