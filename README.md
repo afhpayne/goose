@@ -6,7 +6,7 @@ Goose will:
 * scan the csv file and extract only contacts with an email address
 * support up to 7 emails per contact
 * append a number to each nickname with mutliple emails making them easy to find in Alpine or Mutt
-* back up your current conacts to /tmp and create a new contact file in the Mutt/Alpine default locations
+* back up your current contacts to /tmp and create a new contact file in the Mutt/Alpine default locations
 
 
 There is also exception handling for contacts missing a first name, a last name, or both names (e.g. a company email).
