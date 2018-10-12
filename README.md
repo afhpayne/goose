@@ -96,20 +96,20 @@ If you're not used to python scripts, using them is still easy.
     ```
     chmod +x goose.py
     ```
-Now, you don't need to type 'python3' to execute it, just type goose.py
+    Now, you don't need to type 'python3' to execute it, just type goose.py
 
 * Better yet, take your newly executable script and put it in: 
     ```
     /usr/local/bin
     ```
-Now, you can open any terminal and simply type goose.py to run it.
+    Now, you can open any terminal and simply type goose.py to run it.
 
 * Want to get fancy?  Make your own bin anywhere you like - maybe:
     ```
     /home/username/bin
     ```
-and add this location to your $PATH file.  Edit your .bashrc file:
-    ```# User defined paths:
-    PATH=$PATH:~/bin
-    ```
-Now, executables you add to this new bin will be executable from any open terminal
+    and add this location to your $PATH file.  Edit your .bashrc file:
+        ```# User defined paths:
+        PATH=$PATH:~/bin
+        ```
+    Now, executables you add to this new bin will be executable from any open terminal
