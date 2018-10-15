@@ -15,6 +15,8 @@ CONTENTS:
 
 [Running Goose](#running)
 
+[Dependencies](#dependencies)
+
 [Notes](#notes)
 
 [Exception Handling](#exception-handling)
@@ -27,6 +29,12 @@ CONTENTS:
 Download goose.py open your terminal and execute it with python3 goose.py.
 
 <br><br>
+## Dependencies:
+
+Python 3.6 or newer
+Modules are all from the default toolkit
+
+<br><br>
 ## Notes:
 
 Download your contacts from google as a csv file.  You can use outlook or google native format, but google's is preferable as it preserves more data.
@@ -36,6 +44,8 @@ Download contacts file to your /user/home/Downloads folder and make sure it's na
 Your Alpine contacts are expected to use the default: /home/user/.alpine/addressbook
 
 Your Mutt contacts are expected to use the default: /home/user/.mutt/aliases
+
+Before replacing your existing contact files, Goose backs them up to /tmp.
 
 One-way sync only (google --> Alpine/Mutt)
 
