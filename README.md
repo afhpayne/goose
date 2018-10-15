@@ -31,7 +31,7 @@ Download goose.py open your terminal and execute it with python3 goose.py.
 <br><br>
 ## Dependencies:
 
-Python 3.6 or newer
+Python 3.6 or newer  
 Modules are all from the default toolkit
 
 <br><br>
