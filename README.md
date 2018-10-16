@@ -97,34 +97,40 @@ If your contacts are like mine, not every field is populated.  Mutt and Alpine w
 * parentheses are used for visual clarity
 
 <br><br>
+
 ## Beginners' Help
+If you're new to non-graphical Python programs, using them is still easy.
 
-If you're not used to python scripts, using them is still easy.
-* You must goose.py it from your terminal, just like Mutt and Alpine
+* You can always run one by navigating into its folder using your terminal and typing:
+  ```
+  python3 _programname_
+  ```
+  I use python3 in the example to be certain, but a thoughtfully formatted script should be ok with just 'python' - sometimes a fatal syntax error is a clue your script is calling the wrong version of Python.
+  
+* You can make life easier by making the script executable:
+  ```
+  chmod +x _programname_
+  ```
+  This means you can do away with 'python3' and just type:
+  ```
+  _programname_
+  ```
+* You can now go step further and place your script in an executable directory, such as:
+  ```
+  mv _programname_ /usr/local/bin
+  ```
+  /usr/bin/local is one of several possible locations common in Linux.  Doing so means that simply opening a terminal and typing the programname will run the script.  No need to go to the directory itself.
 
-* Save goose.py in a folder, open that folder and type:
-    ```
-    python3 goose.py
-    ```
-* It's much easier to make it executable.  Go to the folder that contains goose.py and:
-    ```
-    chmod +x goose.py
-    ```
-    Now, you don't need to type 'python3' to execute it, just type goose.py
-
-* Better yet, take your newly executable script and put it in: 
-    ```
-    /usr/local/bin
-    ```
-    Now, you can open any terminal and simply type goose.py to run it.
-
-* Another option - make your own bin anywhere you like - maybe:
-    ```
-    /home/username/bin
-    ```
-    and add this location to your $PATH file.  Edit your .bashrc file:
-    ```
-    # User defined paths:
-    PATH=$PATH:~/bin
-    ```
-    Now, executables you add to this new bin will be executable from any open terminal
+* Lastly, you can go a step further still and make your own executable directory, such as:
+  ```
+  mkdir -p /home/_username_/bin
+  ```
+  Then you would add this line to your .bash_profile:
+  ```
+  PATH=$PATH:/home/_username_/bin
+  ```
+  and
+  ```
+  reboot
+  ```
+  Of course _username_ is your user's name.  And of course you're not running your system as root...
