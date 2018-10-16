@@ -103,31 +103,31 @@ If you're new to non-graphical Python programs, using them is still easy.
 
 * You can always run one by navigating into its folder using your terminal and typing:
   ```
-  python3 _programname_
+  python3 program_name
   ```
-  I use python3 in the example to be certain, but a thoughtfully formatted script should be ok with just 'python' - sometimes a fatal syntax error is a clue your script is calling the wrong version of Python.
+  I use python3 in the example to be certain, but a thoughtfully formatted program should be ok with just 'python' - sometimes a fatal syntax error is a clue your program is calling the wrong version of Python.
   
-* You can make life easier by making the script executable:
+* You can make life easier by making the program executable:
   ```
-  chmod +x _programname_
+  chmod +x program_name
   ```
   This means you can do away with 'python3' and just type:
   ```
-  _programname_
+  program_name
   ```
-* You can now go step further and place your script in an executable directory, such as:
+* You can now go step further and place your program in an executable directory, such as:
   ```
-  mv _programname_ /usr/local/bin
+  mv program_name /usr/local/bin
   ```
-  /usr/bin/local is one of several possible locations common in Linux.  Doing so means that simply opening a terminal and typing the programname will run the script.  No need to go to the directory itself.
+  /usr/bin/local is one of several possible locations common in Linux.  Doing so means that simply opening a terminal and typing the programname will run the program.  No need to go to the directory itself.
 
 * Lastly, you can go a step further still and make your own executable directory, such as:
   ```
-  mkdir -p /home/_username_/bin
+  mkdir -p /home/username/bin
   ```
   Then you would add this line to your .bash_profile:
   ```
-  PATH=$PATH:/home/_username_/bin
+  PATH=$PATH:/home/username/bin
   ```
   and
   ```
