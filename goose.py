@@ -13,10 +13,14 @@ soft_name = "goose.py"
 soft_tag  = "a contact converter for Mutt and Alpine"
 
 # Software version
-soft_vers = "beta 0.13"
+soft_vers = "beta 0.14"
 
 # USER HOME
 user_home = os.environ['HOME']
+
+# This is for compatibility with spruce:
+def user_nag_func():
+    print('')
 
 # User filenames - CHANGE THIS HERE! subsequent code will follow these names
 userfile_alp = 'addressbook'
@@ -81,7 +85,6 @@ else:
 global nick_list
 nick_list = []
 
-# Functions
 # This is for exception handling
 def extract_names_func():
     global first_name
@@ -281,15 +284,18 @@ while mutt_or_alp:
     elif mutt_or_alp == 'A' or mutt_or_alp == 'a':
         shutil.copy2(alpine_temp, alpine_original)
         print("\nAlpine contacts updated!\n")
+        user_nag_func()
         mutt_or_alp = ''
     elif mutt_or_alp == 'M' or mutt_or_alp == 'm':
         shutil.copy2(mutt_temp, mutt_original)
         print("\nMutt contacts updated\n")
+        user_nag_func()
         mutt_or_alp = ''
     elif mutt_or_alp == 'B' or mutt_or_alp == 'b':
         shutil.copy2(alpine_temp, alpine_original)
         shutil.copy2(mutt_temp, mutt_original)
         print("\nAlpine and Mutt contacts updated!\n")
+        user_nag_func()
         mutt_or_alp = ''
     else:
         mutt_or_alp = input("\nImport to (A)lpine, (M)utt, (B)oth, or (Q)uit? ")

@@ -119,7 +119,7 @@ If you're new to non-graphical Python programs, using them is still easy.
   ```
   mv program_name /usr/local/bin
   ```
-  /usr/bin/local is one of several possible locations common in Linux.  Doing so means that simply opening a terminal and typing the programname will run the program.  No need to go to the directory itself.
+  /usr/bin/local is one of several possible locations common in Linux.  Doing so means that simply opening a terminal and typing the program_name will run the program.  No need to go to the directory itself.
 
 * Lastly, you can go a step further still and make your own executable directory, such as:
   ```
