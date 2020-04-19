@@ -28,6 +28,7 @@ import os
 from csv import reader
 import re
 import shutil
+import subprocess
 import sys
 import time
 
@@ -36,7 +37,7 @@ soft_name = "goose.py"
 soft_tag  = "a contact converter for Mutt and Alpine"
 
 # Software version
-soft_vers = "0.2.0"
+soft_vers = "0.2.1"
 
 # User home
 user_home = os.environ['HOME']
@@ -56,7 +57,7 @@ mutt_format = []
 # -m (--mutt) means import for mutt only
 try:
     arg_1 = sys.argv[1]
-    print(arg_1)
+    # print(arg_1)
 except(IndexError):
     arg_1 = "0"
     pass
@@ -137,20 +138,14 @@ def stop_or_go_func():
         exit(1)
 
 # Let's get started
-if arg_1 == "--alpine" or arg_1 == "-a":
+if arg_1 == "--spruce" or arg_1 == "-s":
         stop_or_go_func()
         parse_csv_func()
         write_alpine_func()
         alpine_backup_func()
         print("--> Imported contacts to Alpine\n")
-        exit(0)
-
-elif arg_1 == "--mutt" or arg_1 == "-m":
-        stop_or_go_func()
-        parse_csv_func()
-        write_mutt_func()
-        mutt_backup_func()
-        print("--> Imported contacts to Mutt\n")
+        time.sleep(1)
+        subprocess.run(["spruce.py"])
         exit(0)
 
 else:
